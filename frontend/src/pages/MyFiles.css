@@ -1,0 +1,280 @@
+/* =========================================
+   MY FILES PAGE
+========================================= */
+
+.files-page {
+  padding: 28px 32px;
+}
+
+.files-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 24px;
+}
+
+.files-header h1 {
+  margin: 0 0 6px;
+  color: #222831;
+  font-size: 26px;
+}
+
+.files-header p {
+  margin: 0;
+  color: #6b7280;
+  font-size: 13px;
+}
+
+
+/* =========================================
+   TOOLBAR
+========================================= */
+
+.files-toolbar {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 20px;
+}
+
+.files-search {
+  flex: 1;
+  max-width: 450px;
+  height: 42px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 0 14px;
+  background: #ffffff;
+  border: 1px solid #e5e9ef;
+  border-radius: 8px;
+  color: #8a919c;
+}
+
+.files-search input {
+  width: 100%;
+  border: none;
+  outline: none;
+  font-size: 12px;
+  color: #222831;
+}
+
+.files-search input::placeholder {
+  color: #a0a6ae;
+}
+
+.file-filter {
+  height: 42px;
+  padding: 0 14px;
+  border: 1px solid #e5e9ef;
+  border-radius: 8px;
+  background: #ffffff;
+  color: #222831;
+  cursor: pointer;
+  outline: none;
+}
+
+
+/* =========================================
+   FILE TABLE
+========================================= */
+
+.files-table-card {
+  background: #ffffff;
+  border: 1px solid #e8ebef;
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.files-table-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 18px 20px;
+  border-bottom: 1px solid #eef1f4;
+}
+
+.files-table-header h3 {
+  margin: 0;
+  font-size: 15px;
+  color: #222831;
+}
+
+.files-table-header span {
+  font-size: 11px;
+  color: #8a919c;
+}
+
+
+/* =========================================
+   FILE ROW
+========================================= */
+
+.file-row {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr 1.2fr 1fr 1fr;
+  align-items: center;
+  gap: 15px;
+  padding: 15px 20px;
+  border-bottom: 1px solid #eef1f4;
+}
+
+.file-row:last-child {
+  border-bottom: none;
+}
+
+.file-row-heading {
+  background: #f8f9fb;
+  color: #8a919c;
+  font-size: 10px;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+.file-row:not(.file-row-heading):hover {
+  background: #fafbfc;
+}
+
+.file-row > span {
+  color: #6b7280;
+  font-size: 11px;
+}
+
+
+/* =========================================
+   FILE NAME
+========================================= */
+
+.file-name {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.file-icon {
+  width: 38px;
+  height: 38px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #fff5df;
+  border-radius: 8px;
+  font-size: 17px;
+}
+
+.file-name div:last-child {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.file-name strong {
+  color: #222831;
+  font-size: 12px;
+}
+
+.file-name small {
+  color: #8a919c;
+  font-size: 10px;
+}
+
+
+/* =========================================
+   SECURITY STATUS
+========================================= */
+
+.file-status {
+  color: #238636 !important;
+  font-weight: 600;
+}
+
+
+/* =========================================
+   ACTIONS
+========================================= */
+
+.file-actions {
+  display: flex;
+  gap: 5px;
+}
+
+.file-actions button {
+  width: 30px;
+  height: 30px;
+  border: none;
+  border-radius: 6px;
+  background: #f5f7fb;
+  cursor: pointer;
+  font-size: 13px;
+}
+
+.file-actions button:hover {
+  background: #fff5df;
+}
+
+
+/* =========================================
+   RESPONSIVE
+========================================= */
+
+@media (max-width: 900px) {
+  .file-row {
+    grid-template-columns: 2fr 1fr 1fr 1fr;
+  }
+
+  .file-row > span:nth-child(4) {
+    display: none;
+  }
+}
+
+@media (max-width: 650px) {
+  .files-page {
+    padding: 20px;
+  }
+
+  .files-header {
+    align-items: flex-start;
+    gap: 15px;
+    flex-direction: column;
+  }
+
+  .files-toolbar {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .files-search {
+    max-width: none;
+  }
+
+  .file-row {
+    grid-template-columns: 1fr auto;
+  }
+
+  .file-row-heading,
+  .file-row > span {
+    display: none;
+  }
+}
+.no-files {
+  padding: 50px 20px;
+  text-align: center;
+}
+
+.no-files div {
+  font-size: 30px;
+  margin-bottom: 10px;
+}
+
+.no-files strong {
+  display: block;
+  color: #222831;
+  font-size: 14px;
+  margin-bottom: 5px;
+}
+
+.no-files p {
+  margin: 0;
+  color: #8a919c;
+  font-size: 11px;
+}

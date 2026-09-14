@@ -1,0 +1,55 @@
+.shared-page {
+  padding: 30px;
+}
+
+.shared-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 25px;
+}
+
+.shared-header h1 {
+  margin: 0;
+  color: #222831;
+  font-size: 24px;
+}
+
+.shared-header p {
+  margin: 6px 0 0;
+  color: #6b7280;
+  font-size: 13px;
+}
+
+.shared-table-card {
+  background: #ffffff;
+  border-radius: 12px;
+  border: 1px solid #e5e9ef;
+  overflow: hidden;
+}
+
+.shared-table-card .files-table-header {
+  padding: 20px;
+  border-bottom: 1px solid #eef1f4;
+}
+
+@media (max-width: 900px) {
+  .shared-page {
+    padding: 20px;
+  }
+
+  .shared-header {
+    align-items: flex-start;
+    gap: 15px;
+  }
+}
+
+@media (max-width: 600px) {
+  .shared-header {
+    flex-direction: column;
+  }
+
+  .shared-header .upload-button {
+    width: 100%;
+  }
+}
