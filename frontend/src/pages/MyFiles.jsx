@@ -19,7 +19,7 @@ const [fileType, setFileType] = useState("All Files");
     {
       name: "presentation.pptx",
       type: "PPTX",
-      owner: "Tashneet",
+      owner: "Tashmeet",
       size: "8.7 MB",
       date: "14 Sep 2026",
       status: "Secure",

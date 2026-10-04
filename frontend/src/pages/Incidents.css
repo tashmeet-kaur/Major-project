@@ -1,0 +1,297 @@
+.incidents-page {
+  padding: 30px;
+}
+
+.incidents-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 25px;
+}
+
+.incidents-header h1 {
+  margin: 0;
+  color: #222831;
+  font-size: 24px;
+}
+
+.incidents-header p {
+  margin: 6px 0 0;
+  color: #6b7280;
+  font-size: 13px;
+}
+
+.incident-monitoring {
+  background: #eaf7ee;
+  color: #238636;
+  padding: 8px 12px;
+  border-radius: 7px;
+  font-size: 11px;
+  font-weight: 600;
+}
+
+/* Incident Statistics */
+
+.incident-stats {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 18px;
+  margin-bottom: 20px;
+}
+
+.incident-stat-card {
+  background: #ffffff;
+  border: 1px solid #e5e9ef;
+  border-radius: 10px;
+  padding: 18px;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.incident-stat-icon {
+  width: 44px;
+  height: 44px;
+  background: #fff5df;
+  border-radius: 9px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  font-size: 19px;
+}
+
+.incident-stat-card div:last-child {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.incident-stat-card span {
+  color: #6b7280;
+  font-size: 11px;
+}
+
+.incident-stat-card strong {
+  color: #222831;
+  font-size: 21px;
+}
+
+/* Incident Table */
+
+.incidents-table-card {
+  background: #ffffff;
+  border: 1px solid #e5e9ef;
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.incidents-table-header {
+  padding: 20px;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  border-bottom: 1px solid #eef1f4;
+}
+
+.incidents-table-header h3 {
+  margin: 0 0 5px;
+  color: #222831;
+  font-size: 15px;
+}
+
+.incidents-table-header p {
+  margin: 0;
+  color: #8a919c;
+  font-size: 11px;
+}
+
+.incident-filter {
+  border: 1px solid #e5e9ef;
+  background: #ffffff;
+  padding: 8px 12px;
+  border-radius: 6px;
+  color: #555d68;
+  font-size: 11px;
+}
+
+/* Rows */
+
+.incident-row {
+  display: grid;
+
+  grid-template-columns:
+    1.8fr
+    1fr
+    0.8fr
+    1fr
+    1fr
+    0.8fr
+    0.8fr;
+
+  align-items: center;
+
+  gap: 15px;
+
+  padding: 16px 20px;
+
+  border-bottom: 1px solid #eef1f4;
+
+  color: #555d68;
+  font-size: 11px;
+}
+
+.incident-row:last-child {
+  border-bottom: none;
+}
+
+.incident-row-heading {
+  background: #f8f9fb;
+  color: #6b7280;
+  font-weight: 600;
+  font-size: 10px;
+}
+
+/* Incident Name */
+
+.incident-name {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.incident-name strong {
+  color: #f96d00;
+  font-size: 10px;
+}
+
+.incident-name span {
+  color: #222831;
+  font-size: 11px;
+  font-weight: 600;
+}
+
+/* Severity */
+
+.incident-severity {
+  width: fit-content;
+
+  padding: 5px 9px;
+
+  border-radius: 5px;
+
+  font-size: 9px;
+  font-weight: 600;
+}
+
+.incident-severity.critical {
+  background: #fdeaea;
+  color: #c62828;
+}
+
+.incident-severity.high {
+  background: #fff0e0;
+  color: #d96b00;
+}
+
+.incident-severity.medium {
+  background: #fff8d9;
+  color: #927600;
+}
+
+.incident-severity.low {
+  background: #eaf7ee;
+  color: #238636;
+}
+
+/* Status */
+
+.incident-status {
+  font-size: 10px;
+  font-weight: 600;
+}
+
+.incident-status.open {
+  color: #c62828;
+}
+
+.incident-status.investigating {
+  color: #d96b00;
+}
+
+.incident-status.resolved {
+  color: #238636;
+}
+
+/* Actions */
+
+.incident-actions {
+  display: flex;
+  gap: 6px;
+}
+
+.incident-actions button {
+  width: 30px;
+  height: 30px;
+
+  border: none;
+
+  background: #f8f9fb;
+
+  border-radius: 6px;
+
+  cursor: pointer;
+}
+
+.incident-actions button:hover {
+  background: #fff5df;
+}
+
+/* Responsive */
+
+@media (max-width: 1100px) {
+  .incident-stats {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .incident-row {
+    grid-template-columns:
+      1.8fr
+      1fr
+      0.8fr
+      1fr
+      0.8fr;
+  }
+
+  .incident-row > span:nth-child(5),
+  .incident-row > span:nth-child(6) {
+    display: none;
+  }
+}
+
+@media (max-width: 700px) {
+  .incidents-page {
+    padding: 20px;
+  }
+
+  .incidents-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+  }
+
+  .incident-stats {
+    grid-template-columns: 1fr;
+  }
+
+  .incidents-table {
+    overflow-x: auto;
+  }
+
+  .incident-row {
+    min-width: 800px;
+  }
+}

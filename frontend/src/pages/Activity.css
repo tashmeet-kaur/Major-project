@@ -1,0 +1,284 @@
+.activity-page {
+  padding: 30px;
+}
+
+.activity-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 25px;
+}
+
+.activity-header h1 {
+  margin: 0;
+  color: #222831;
+  font-size: 24px;
+}
+
+.activity-header p {
+  margin: 6px 0 0;
+  color: #6b7280;
+  font-size: 13px;
+}
+
+.logging-status {
+  background: #eaf7ee;
+  color: #238636;
+  padding: 8px 12px;
+  border-radius: 7px;
+  font-size: 11px;
+  font-weight: 600;
+}
+
+/* Activity Statistics */
+
+.activity-stats {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 18px;
+  margin-bottom: 20px;
+}
+
+.activity-stat-card {
+  background: #ffffff;
+  border: 1px solid #e5e9ef;
+  border-radius: 10px;
+  padding: 18px;
+
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.activity-stat-icon {
+  width: 44px;
+  height: 44px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background: #fff5df;
+  border-radius: 9px;
+
+  font-size: 19px;
+}
+
+.activity-stat-card div:last-child {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.activity-stat-card span {
+  color: #6b7280;
+  font-size: 11px;
+}
+
+.activity-stat-card strong {
+  color: #222831;
+  font-size: 21px;
+}
+
+/* Table Card */
+
+.activity-table-card {
+  background: #ffffff;
+  border: 1px solid #e5e9ef;
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.activity-table-header {
+  padding: 20px;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  border-bottom: 1px solid #eef1f4;
+}
+
+.activity-table-header h3 {
+  margin: 0 0 5px;
+  color: #222831;
+  font-size: 15px;
+}
+
+.activity-table-header p {
+  margin: 0;
+  color: #8a919c;
+  font-size: 11px;
+}
+
+/* Filters */
+
+.activity-filters {
+  display: flex;
+  gap: 8px;
+}
+
+.activity-filters select {
+  border: 1px solid #e5e9ef;
+  background: #ffffff;
+  padding: 8px 10px;
+  border-radius: 6px;
+  color: #555d68;
+  font-size: 10px;
+}
+
+/* Rows */
+
+.activity-row {
+  display: grid;
+
+  grid-template-columns:
+    2.2fr
+    1fr
+    1fr
+    0.9fr
+    0.8fr;
+
+  align-items: center;
+
+  gap: 15px;
+
+  padding: 16px 20px;
+
+  border-bottom: 1px solid #eef1f4;
+
+  color: #555d68;
+  font-size: 11px;
+}
+
+.activity-row:last-child {
+  border-bottom: none;
+}
+
+.activity-row-heading {
+  background: #f8f9fb;
+  color: #6b7280;
+  font-weight: 600;
+  font-size: 10px;
+}
+
+/* Activity Name */
+
+.activity-name {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.activity-icon {
+  width: 36px;
+  height: 36px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background: #f8f9fb;
+  border-radius: 8px;
+
+  font-size: 15px;
+}
+
+.activity-name div:last-child {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.activity-name strong {
+  color: #222831;
+  font-size: 11px;
+}
+
+.activity-name span {
+  color: #8a919c;
+  font-size: 9px;
+}
+
+/* Source */
+
+.activity-source {
+  color: #555d68;
+}
+
+/* Status */
+
+.activity-status {
+  font-size: 10px;
+  font-weight: 600;
+}
+
+.activity-status.success {
+  color: #238636;
+}
+
+.activity-status.warning {
+  color: #d96b00;
+}
+
+.activity-status.blocked {
+  color: #c62828;
+}
+
+/* Responsive */
+
+@media (max-width: 1000px) {
+  .activity-stats {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .activity-row {
+    grid-template-columns:
+      2fr
+      1fr
+      1fr
+      0.9fr;
+  }
+
+  .activity-row > span:last-child {
+    display: none;
+  }
+}
+
+@media (max-width: 700px) {
+  .activity-page {
+    padding: 20px;
+  }
+
+  .activity-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+  }
+
+  .activity-stats {
+    grid-template-columns: 1fr;
+  }
+
+  .activity-table-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 15px;
+  }
+
+  .activity-filters {
+    width: 100%;
+  }
+
+  .activity-filters select {
+    flex: 1;
+  }
+
+  .activity-table {
+    overflow-x: auto;
+  }
+
+  .activity-row {
+    min-width: 750px;
+  }
+}

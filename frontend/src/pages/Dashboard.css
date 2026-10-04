@@ -2,15 +2,23 @@
    DASHBOARD LAYOUT
 ================================ */
 
+/* =========================================
+   MAIN DASHBOARD LAYOUT
+========================================= */
+
 .dashboard-layout {
-  display: flex;
+  width: 100%;
   min-height: 100vh;
-  background: #f5f7fb;
+  background-color: #f5f7fb;
+  box-sizing: border-box;
+  padding: 10px;
 }
 
 .dashboard-main {
-  flex: 1;
-  padding: 32px;
+  margin-left: 245px;
+  width: calc(100% - 240px);
+  min-height: 100vh;
+  box-sizing: border-box;
   overflow-x: hidden;
 }
 
@@ -55,10 +63,6 @@
   transform: translateY(-1px);
 }
 
-
-/* ================================
-   STATISTICS
-================================ */
 
 /* ================================
    STATISTICS CARDS
@@ -157,12 +161,12 @@
   background: #fff1e6;
 }
 
-.stat-card.alerts .stat-icon {
-  background: #fff5df;
+.stat-card.alerts .stat-content h2 {
+  color: #f96d00;
 }
 
-.stat-card.risk .stat-icon {
-  background: #eaf7ee;
+.stat-card.risk .stat-content h2 {
+  color: #238636;
 }
 
 
@@ -173,7 +177,8 @@
 .dashboard-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 20px;
+  gap: 24px;
+  margin-bottom: 24px;
 }
 
 .dashboard-card {
@@ -211,24 +216,6 @@
   font-size: 22px;
   font-weight: 700;
   color: #f96d00;
-}
-
-.storage-summary {
-  display: flex;
-  align-items: baseline;
-  justify-content: space-between;
-
-  margin-bottom: 8px;
-}
-
-.storage-summary strong {
-  color: #222831;
-  font-size: 20px;
-}
-
-.storage-summary span {
-  color: #8a919c;
-  font-size: 11px;
 }
 
 .storage-bar {
@@ -300,6 +287,330 @@
 /* ================================
    SECURITY STATUS
 ================================ */
+
+.secure-badge {
+  background: #e8f7ed;
+  color: #238636;
+  padding: 6px 10px;
+  border-radius: 20px;
+  font-size: 11px;
+  font-weight: 600;
+}
+
+.security-list {
+  display: flex;
+  flex-direction: column;
+  gap: 13px;
+}
+
+.security-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.security-icon {
+  width: 34px;
+  height: 34px;
+  border-radius: 8px;
+  background: #f2f2f2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 16px;
+}
+
+.security-item div {
+  flex: 1;
+}
+
+.security-item strong {
+  display: block;
+  color: #222831;
+  font-size: 13px;
+}
+
+.security-item small {
+  color: #8a919c;
+  font-size: 11px;
+}
+
+.status-active {
+  color: #238636;
+  font-size: 11px;
+  font-weight: 600;
+}
+
+
+/* ================================
+   ACTIVITY
+================================ */
+
+.activity-list {
+  display: flex;
+  flex-direction: column;
+}
+
+.activity-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 14px 0;
+  border-bottom: 1px solid #eef0f3;
+}
+
+.activity-item:last-child {
+  border-bottom: none;
+}
+
+.activity-icon {
+  width: 36px;
+  height: 36px;
+  background: #f2f2f2;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.activity-details {
+  flex: 1;
+}
+
+.activity-details strong {
+  display: block;
+  color: #222831;
+  font-size: 13px;
+}
+
+.activity-details span {
+  color: #8a919c;
+  font-size: 11px;
+}
+
+.activity-item time {
+  color: #8a919c;
+  font-size: 10px;
+}
+
+.view-btn {
+  border: none;
+  background: transparent;
+  color: #f96d00;
+  font-size: 12px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+
+/* ================================
+   SECURITY ALERTS
+================================ */
+
+.alerts-list {
+  display: flex;
+  flex-direction: column;
+}
+
+.alert-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 14px 0;
+  border-bottom: 1px solid #eef0f3;
+}
+
+.alert-item:last-child {
+  border-bottom: none;
+}
+
+.alert-indicator {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: 13px;
+}
+
+.alert-indicator.critical {
+  background: #ffe5e5;
+  color: #dc2626;
+}
+
+.alert-indicator.high {
+  background: #fff0df;
+  color: #f96d00;
+}
+
+.alert-indicator.medium {
+  background: #fff8d8;
+  color: #b77900;
+}
+
+.alert-details {
+  flex: 1;
+}
+
+.alert-details strong {
+  display: block;
+  color: #222831;
+  font-size: 12px;
+}
+
+.alert-details span {
+  color: #8a919c;
+  font-size: 10px;
+}
+
+.severity {
+  padding: 5px 8px;
+  border-radius: 5px;
+  font-size: 9px;
+  font-weight: 700;
+}
+
+.severity.critical {
+  background: #ffe5e5;
+  color: #dc2626;
+}
+
+.severity.high {
+  background: #fff0df;
+  color: #f96d00;
+}
+
+.severity.medium {
+  background: #fff8d8;
+  color: #b77900;
+}
+
+
+/* ================================
+   QUICK ACTIONS
+================================ */
+
+.quick-actions {
+  background: white;
+  border: 1px solid #e6e9ef;
+  border-radius: 12px;
+  padding: 22px 24px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.quick-actions h3 {
+  margin: 0 0 4px;
+  font-size: 16px;
+  color: #222831;
+}
+
+.quick-actions p {
+  margin: 0;
+  color: #8a919c;
+  font-size: 12px;
+}
+
+.quick-buttons {
+  display: flex;
+  gap: 10px;
+}
+
+.quick-buttons button {
+  border: 1px solid #dfe3e8;
+  background: white;
+  padding: 10px 14px;
+  border-radius: 7px;
+  color: #393e46;
+  font-size: 11px;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.quick-buttons button:hover {
+  border-color: #f96d00;
+  color: #f96d00;
+}
+
+
+/* ================================
+   RESPONSIVE DESIGN
+================================ */
+
+@media (max-width: 1100px) {
+  .stats-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 850px) {
+  .dashboard-main {
+    padding: 20px;
+  }
+
+  .dashboard-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .quick-actions {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 20px;
+  }
+
+  .quick-buttons {
+    flex-wrap: wrap;
+  }
+}
+
+@media (max-width: 600px) {
+  .stats-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .dashboard-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 15px;
+  }
+
+  .upload-btn {
+    width: 100%;
+  }
+
+  .storage-types {
+    grid-template-columns: 1fr;
+  }
+
+  .quick-buttons {
+    width: 100%;
+  }
+
+  .quick-buttons button {
+    flex: 1;
+  }
+
+  .storage-summary {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+
+  margin-bottom: 8px;
+}
+
+.storage-summary strong {
+  color: #222831;
+  font-size: 20px;
+}
+
+.storage-summary span {
+  color: #8a919c;
+  font-size: 11px;
+}
+}
 
 /* =========================================
    SECURITY STATUS
@@ -405,11 +716,6 @@
   color: #238636;
   background: #eaf7ee;
 }
-
-
-/* ================================
-   ACTIVITY
-================================ */
 
 /* =========================================
    FILE ACTIVITY
@@ -564,109 +870,121 @@
   white-space: nowrap;
 }
 
+/* =========================================
+   UPLOAD PREVIEW
+========================================= */
 
-/* ================================
-   QUICK ACTIONS
-================================ */
-
-.quick-actions {
-  background: white;
-  border: 1px solid #e6e9ef;
-  border-radius: 12px;
-  padding: 22px 24px;
+.upload-preview {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  background: #ffffff;
+  border: 1px solid #e5e9ef;
+  border-radius: 10px;
+  padding: 14px 18px;
+  margin-bottom: 20px;
 }
 
-.quick-actions h3 {
-  margin: 0 0 4px;
-  font-size: 16px;
+.upload-preview strong {
   color: #222831;
+  font-size: 13px;
 }
 
-.quick-actions p {
-  margin: 0;
-  color: #8a919c;
+.upload-preview p {
+  margin: 4px 0 0;
+  color: #6b7280;
   font-size: 12px;
 }
 
-.quick-buttons {
-  display: flex;
-  gap: 10px;
-}
-
-.quick-buttons button {
-  border: 1px solid #dfe3e8;
-  background: white;
-  padding: 10px 14px;
-  border-radius: 7px;
-  color: #393e46;
+.remove-file-button {
+  border: none;
+  background: #fdeaea;
+  color: #c62828;
+  padding: 7px 12px;
+  border-radius: 6px;
   font-size: 11px;
+  font-weight: 600;
   cursor: pointer;
-  transition: 0.2s;
 }
 
-.quick-buttons button:hover {
+.remove-file-button:hover {
+  background: #fbd5d5;
+}
+
+
+/* =========================================
+   QUICK ACTIONS
+========================================= */
+
+.quick-actions-card {
+  margin-top: 20px;
+}
+
+.quick-actions {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 14px;
+}
+
+.quick-action {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 15px;
+  background: #f8f9fb;
+  border: 1px solid #eef1f4;
+  border-radius: 10px;
+  text-align: left;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.quick-action:hover {
   border-color: #f96d00;
-  color: #f96d00;
+  transform: translateY(-2px);
+  background: #ffffff;
 }
 
+.quick-action-icon {
+  width: 38px;
+  height: 38px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #fff5df;
+  border-radius: 8px;
+  font-size: 17px;
+}
 
-/* ================================
-   RESPONSIVE DESIGN
-================================ */
+.quick-action > span:last-child {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
 
-@media (max-width: 1100px) {
-  .stats-grid {
+.quick-action strong {
+  color: #222831;
+  font-size: 12px;
+}
+
+.quick-action small {
+  color: #8a919c;
+  font-size: 10px;
+}
+
+@media (max-width: 900px) {
+  .quick-actions {
     grid-template-columns: repeat(2, 1fr);
   }
 }
 
-@media (max-width: 850px) {
-  .dashboard-main {
-    padding: 20px;
-  }
-
-  .dashboard-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .quick-actions {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 20px;
-  }
-
-  .quick-buttons {
-    flex-wrap: wrap;
-  }
-}
-
 @media (max-width: 600px) {
-  .stats-grid {
+  .quick-actions {
     grid-template-columns: 1fr;
   }
 
-  .dashboard-header {
-    flex-direction: column;
+  .upload-preview {
     align-items: flex-start;
-    gap: 15px;
-  }
-
-  .upload-btn {
-    width: 100%;
-  }
-
-  .storage-types {
-    grid-template-columns: 1fr;
-  }
-
-  .quick-buttons {
-    width: 100%;
-  }
-
-  .quick-buttons button {
-    flex: 1;
+    gap: 12px;
   }
 }

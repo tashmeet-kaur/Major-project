@@ -12,8 +12,8 @@ function Users() {
       status: "Active",
     },
     {
-      name: "Tashneet",
-      email: "tashneet@skyguard.com",
+      name: "Tashmeet",
+      email: "tashmeet@skyguard.com",
       role: "Manager",
       permission: "Read & Write",
       status: "Active",

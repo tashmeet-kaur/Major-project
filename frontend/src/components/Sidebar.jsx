@@ -1,7 +1,8 @@
-import { NavLink } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
 import "./Sidebar.css";
 
 function Sidebar() {
+  const navigate = useNavigate();
   return (
     <aside className="sidebar">
       
@@ -63,10 +64,19 @@ function Sidebar() {
           Settings
         </NavLink>
 
-        <button className="logout-button">
-          <span>🚪</span>
-          Logout
-        </button>
+        <button
+  className="logout-button"
+  onClick={() => {
+    localStorage.removeItem("skyguardLoggedIn");
+    localStorage.removeItem("skyguardUser");
+    localStorage.removeItem("skyguardToken");
+
+    navigate("/login");
+  }}
+>
+  <span>🚪</span>
+  Logout
+</button>
 
       </div>
 
